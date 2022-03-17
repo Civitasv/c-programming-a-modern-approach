@@ -1,4 +1,4 @@
-# C语言程序设计： 现代方法
+# C 语言程序设计： 现代方法
 
 > Original book: C Programming: A Modern Approach, Second Edition
 
