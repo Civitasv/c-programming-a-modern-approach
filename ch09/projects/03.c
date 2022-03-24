@@ -5,25 +5,31 @@
 
 #define N 10
 
+void generate_random_walk(char [N][N]);
+
+void print_array(char [N][N]);
+
 bool overstep(int i, int j);
 
 int main() {
-    char chrs[N][N] = {'A'};
+    char chrs[N][N];
     char letter = 'A';
     int i = 0, j = 0;
     bool up, down, left, right;
     time_t t;
     srand((unsigned) time(&t));
 
+    generate_random_walk(chrs);
+    chrs[i][j] = 'A';
     while (letter < 'Z') {
         up = down = left = right = false;
-        if (!overstep(i, j + 1) && chrs[i][j + 1] == 0) // right
+        if (!overstep(i, j + 1) && chrs[i][j + 1] == '.') // right
             right = true;
-        if (!overstep(i, j - 1) && chrs[i][j - 1] == 0) // left
+        if (!overstep(i, j - 1) && chrs[i][j - 1] == '.') // left
             left = true;
-        if (!overstep(i - 1, j) && chrs[i - 1][j] == 0) // up
+        if (!overstep(i - 1, j) && chrs[i - 1][j] == '.') // up
             up = true;
-        if (!overstep(i + 1, j) && chrs[i + 1][j] == 0) // down
+        if (!overstep(i + 1, j) && chrs[i + 1][j] == '.') // down
             down = true;
         if (!right && !left && !up && !down)
             break;
@@ -53,17 +59,27 @@ int main() {
         }
     }
 
-    for (i = 0; i < N; i++) {
-        for (j = 0; j < N; j++) {
-            if (chrs[i][j] == 0)
-                printf(". ");
-            else printf("%c ", chrs[i][j]);
-        }
-        printf("\n");
-    }
+    print_array(chrs);
     return 0;
 }
 
 bool overstep(int i, int j) {
     return i >= N || i < 0 || j >= N || j < 0;
+}
+
+void generate_random_walk(char arr[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++)
+            arr[i][j] = '.';
+    }
+}
+
+void print_array(char arr[N][N]) {
+    int i, j;
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            printf("%c ", arr[i][j]);
+        }
+        printf("\n");
+    }
 }
