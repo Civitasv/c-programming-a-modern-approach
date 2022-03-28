@@ -6,7 +6,7 @@ int main() {
     int dollar;
     printf("Enter a dollar amount: ");
     scanf("%d", &dollar);
-
+    
     int _20_numbers;
     int _10_numbers;
     int _5_numbers;
