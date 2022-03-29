@@ -4,6 +4,5 @@ int count_spaces(const char *s)
     while (*s)
         if (*s++ == ' ')
             count++;
-
     return count;
 }
