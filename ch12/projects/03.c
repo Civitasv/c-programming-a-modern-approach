@@ -6,7 +6,6 @@ int main()
     char *loc = mes;
 
     printf("Enter a message: ");
-
     while (loc < mes + 100 && (*loc++ = getchar()) != '\n')
         ;
     printf("Reversal is: ");

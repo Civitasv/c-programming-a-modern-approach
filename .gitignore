@@ -3,3 +3,4 @@
 CMakeLists.txt
 build
 **/bin
+cmake-build-debug
