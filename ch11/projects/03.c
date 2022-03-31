@@ -4,7 +4,8 @@ int gcd(int, int);
 
 void reduce(int, int, int *, int *);
 
-int main() {
+int main()
+{
     int numerator, denom, reduced_numerator, reduced_denominator;
 
     printf("Enter a fraction: ");
@@ -18,8 +19,10 @@ int main() {
     return 0;
 }
 
-int gcd(int a, int b) {
-    while (a != 0) {
+int gcd(int a, int b)
+{
+    while (a != 0)
+    {
         int temp = a;
         a = b % a;
         b = temp;
@@ -30,7 +33,8 @@ int gcd(int a, int b) {
 
 void reduce(int numerator, int denominator,
             int *reduced_numerator,
-            int *reduced_denominator) {
+            int *reduced_denominator)
+{
     int gcd_val = gcd(numerator, denominator);
 
     *reduced_numerator = numerator / gcd_val;

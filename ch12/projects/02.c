@@ -22,10 +22,10 @@ int main()
         while (lo < loc && (*lo <= 'a' || *lo >= 'z'))
             lo++;
 
-        while (hi >= 0 && (*hi <= 'a' || *hi >= 'z'))
+        while (hi >= mes && (*hi <= 'a' || *hi >= 'z'))
             hi--;
 
-        if (lo < hi && lo < loc && hi >= 0)
+        if (lo < hi && lo < loc && hi >= mes)
         {
             if (*lo != *hi)
             {
