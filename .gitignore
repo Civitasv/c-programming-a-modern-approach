@@ -3,4 +3,7 @@
 CMakeLists.txt
 build
 **/bin
+**/build
 cmake-build-debug
+CMake.md
+ch15Config.h.in

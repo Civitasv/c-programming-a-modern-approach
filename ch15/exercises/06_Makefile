@@ -1,0 +1,17 @@
+demo: main.o f1.o f2.o
+	gcc -o demo main.o f1.o f2.o
+
+main.o: main.c f1.h
+	gcc -c main.c
+
+f1.o: f1.c f1.h f2.h
+	gcc -c f1.c
+
+f2.o: f2.c f1.h f2.h
+	gcc -c f2.c
+
+
+# a. 应对 main,c, f1.c 和 f2.c 全部编译。
+# b. 对 f1.c 重新编译。
+# c. 对 main.c, f1.c 和 f2.c 全部重新编译。
+# d. 对 f1.c 和 f2.c 重新编译。
