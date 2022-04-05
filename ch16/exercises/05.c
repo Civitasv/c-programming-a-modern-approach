@@ -21,7 +21,7 @@ int day_of_year(struct date d)
 
 int compare_dates(struct date d1, struct date d2)
 {
-    if (d1.year == d2.year && d1.month == d2.month || d1.day == d2.day)
+    if (d1.year == d2.year && d1.month == d2.month && d1.day == d2.day)
         return 0;
     return d1.year > d2.year || d1.month > d2.month || d1.day > d2.day ? 1 : -1;
 }
