@@ -3,7 +3,6 @@
 
 void make_empty(void)
 {
-
     top = 0;
 }
 
