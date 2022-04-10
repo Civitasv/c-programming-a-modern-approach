@@ -5,3 +5,27 @@
  * d. x 是具有两个参数的函数，第一个参数是 int，第二个参数是以 int 为参数，无返回值的函数，x 函数返回
  *    指向以 int 为参数，无返回值的函数的指针
  */
+
+#include <stdio.h>
+
+void f(int a, int b)
+{
+    printf("TEST");
+}
+
+int test(int a)
+{
+    return a * 2;
+}
+
+int (*testG(int a))(int b)
+{
+    return test;
+}
+
+int main()
+{
+    void (*x)(int, int) = f;
+    int a = (*testG(2))(3);
+    printf("%d \n", a);
+}
